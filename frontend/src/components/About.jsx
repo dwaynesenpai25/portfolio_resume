@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import API_LINK from "../../api";
 // import Services from "./Services";
 
 const About = () => {
@@ -19,7 +20,7 @@ const About = () => {
 
   const fetchSkills = async () => {
     try {
-      const response = await axios.get("http://localhost:8800/read");
+      const response = await axios.get(`${API_LINK}/read`);
       if (response.status === 200) {
         setSkill(response.data.data);
       }

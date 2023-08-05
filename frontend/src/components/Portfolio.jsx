@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import API_LINK from "../../api";
 
 const Portfolio = () => {
   const [project, setProject] = useState([]);
@@ -11,7 +12,7 @@ const Portfolio = () => {
 
   const fetchSkills = async () => {
     try {
-      const response = await axios.get("http://localhost:8800/read_proj");
+      const response = await axios.get(`${API_LINK}/read_proj`);
       if (response.status === 200) {
         setProject(response.data.data);
       }
