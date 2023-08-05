@@ -38,6 +38,11 @@ mongoose.connect(MONGO_URI, {
 });
 
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to Andrei's Backend API",
+  });
+});
 
 app.get("/read", async (req, res) => {
   try {
